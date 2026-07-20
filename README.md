@@ -1,12 +1,19 @@
-# IMT-Resources
+# What is this?
 This is a collection of various forms and resources used by Incident Management Teams.
+
 This program is designed to assist an incident manager in searching for relevant documents that are frequently used while involved in an incident.
 
 # How do I use this?
-This is designed to be downloaded and used on your local machine.  
-On the right you will find a box named "Releases" with a release version listed below.
-Click the desired version and download the Zip file to a directory on your machine.
+This is designed to be downloaded and used on your local machine. 
+
+On the right click on the label named "[Releases](https://github.com/osajus/IMT-Resources/releases)".
+
+Find the desired release version and click "Assets".  Click to download the Source Code (zip) file to a directory on your machine.
+
 Unzip the contents and run the "index.html" file.  
+
+![Assets > Download ZIP](./assets/images/image.png)
+![Unzip and run index.html](./assets/images/image-1.png)
 
 # Disclaimer
 We do not assert ownership of any documents included in this library.  All included documents are the intellectual property of their respective owners.
