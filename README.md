@@ -6,14 +6,12 @@ This program is designed to assist an incident manager in searching for relevant
 # How do I use this?
 This is designed to be downloaded and used on your local machine. 
 
-On the right click on the label named "[Releases](https://github.com/osajus/IMT-Resources/releases)".
+Find the desired release version from [here](https://github.com/osajus/IMT-Resources/releases/latest).  Under Assets, download the Source Code (zip) file to a directory on your machine.
 
-Find the desired release version and click "Assets".  Click to download the Source Code (zip) file to a directory on your machine.
+Unzip the contents and run the "IMT-Resources.html" file.  
 
-Unzip the contents and run the "index.html" file.  
+![alt text](./assets/images/image.png)
 
-![Assets > Download ZIP](./assets/images/image.png)
-![Unzip and run index.html](./assets/images/image-1.png)
 
 # Disclaimer
 We do not assert ownership of any documents included in this library.  All included documents are the intellectual property of their respective owners.
