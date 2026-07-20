@@ -88,8 +88,8 @@ function renderCards() {
         <p class="card__desc">${item.description}</p>
         <div class="card__category">Categories: ${item.categories.map(c => `<span>${c}</span>`).join(", ")}</div>
         <div class="card__tags">Tags: ${item.tags.map(t => `<span>${t}</span>`).join("")}</div>
-        <a class="card__open" href="${item.path}" target="_blank">
-            Open Document
+        <a class="card__open" href="${item.path}" download="${item.filename}">
+            Download Document
         </a>
     </div>
     `;
