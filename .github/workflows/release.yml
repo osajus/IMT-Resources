@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build dist using releaseignore
+        run: |
+          mkdir -p dist
+          rsync -av --exclude-from='.releaseignore' \
+            --exclude 'dist' \
+            ./ dist/
+
+      - name: Zip dist
+        run: cd dist && zip -r ../release.zip .
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release.zip
