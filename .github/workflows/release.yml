@@ -1,9 +1,12 @@
 name: Release
 
+permissions:
+  contents: write
+  
 on:
   push:
     tags:
-      - '20*'
+      - '*'
 
 jobs:
   build-release:
