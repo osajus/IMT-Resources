@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMT Resources — Manifest Admin</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hibur+Mono&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="admin-head">
+        <p class="admin-title">Manifest Admin</p>
+        <div class="admin-toolbar">
+            <button id="btn-open" type="button">Open manifest.js</button>
+            <button id="btn-save" type="button" disabled>Save</button>
+            <span id="file-status" class="file-status">No file open</span>
+        </div>
+    </header>
+
+    <div id="unsupported-banner" class="unsupported-banner" hidden>
+        This tool uses the File System Access API to edit manifest.js in place. That API is only available in
+        Chromium-based browsers (Chrome, Edge). Please switch browsers to use this tool.
+    </div>
+
+    <div class="admin-body">
+
+        <aside class="item-list-panel">
+            <div class="list-toolbar">
+                <input id="search-input" type="text" placeholder="Search items">
+                <button id="btn-add" type="button" disabled>+ Add</button>
+            </div>
+            <ul id="item-list" class="item-list"></ul>
+        </aside>
+
+        <main class="detail-panel">
+            <p id="empty-state" class="empty-state">You found the admin panel.  This is not intended for your use.</p>
+            <p id="empty-state" class="empty-state">If you figure out how to use this, changes will not persist on version change.</p>
+
+            <form id="item-form" hidden>
+                <label>
+                    Title
+                    <input id="field-title" type="text">
+                </label>
+                <label>
+                    Base Path
+                    <input id="field-basepath" type="text">
+                </label>
+                <label>
+                    Filename
+                    <input id="field-filename" type="text">
+                </label>
+                <label>
+                    Categories
+                    <div id="chip-categories" class="chip-input"></div>
+                </label>
+                <label>
+                    Tags
+                    <div id="chip-tags" class="chip-input"></div>
+                </label>
+                <label>
+                    Date
+                    <input id="field-date" type="date">
+                </label>
+                <label>
+                    Description
+                    <textarea id="field-description" rows="4"></textarea>
+                </label>
+
+                <p class="computed-path">Resolved path: <code id="computed-path"></code></p>
+
+                <div class="form-actions">
+                    <button id="btn-delete" type="button" class="btn-danger">Delete Item</button>
+                </div>
+            </form>
+        </main>
+
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+
+</body>
+
+</html>

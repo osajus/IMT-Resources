@@ -3,10 +3,10 @@ const RESOURCES = [
         title: "Incident Briefing",
         basepath: "resources/",
         filename: "ics form 201, incident briefing (v3) (no instructions).pdf",
-        categories: ["planning"],
+        categories: ["planning", "command"],
         tags: ["briefing", "initial response", "situation"],
-        date: "2026-07-20",
-        description: "Provides initial incident information for briefing arriving personnel."
+        date: "2026-07-19",
+        description: "Provides initial incident information for briefing arriving personnel..."
     },
     {
         title: "Incident Objectives",
@@ -448,6 +448,15 @@ const RESOURCES = [
         tags: ["action tracker", "follow-up", "instructions"],
         date: "2026-07-20",
         description: "Step-by-step instructions for completing the Incident Open Action Tracker form."
+    },
+    {
+        title: "Planning P",
+        basepath: "resources/",
+        filename: "Planning Cycle.pdf",
+        categories: ["command", "planning"],
+        tags: ["Planning", "Planning P"],
+        date: "2026-07-21",
+        description: "Planning P is a framework used in emergency management that outlines the steps for effective operational planning during incidents, starting with the occurrence of an event and leading to initial response and assessment. It emphasizes structured meetings and action plans to ensure a coordinated response."
     }
 ];
 
