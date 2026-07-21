@@ -6,8 +6,10 @@ This program is designed to assist an incident manager in searching for relevant
 # How do I use this?
 This is designed to be downloaded and used on your local machine. 
 
-Latest release (2026-07-21-beta) can be found [here](2026-07-21-betaLINK).
-Verification Hash: 7dd2084ee33694ece9569d1027c854342c6cdd807d7a3b2bec21e7e14dedd535
+Latest release (2026-07-21-beta) can be found [here](https://github.com/osajus/IMT-Resources/releases/download/2026-07-21-beta/release.zip).
+
+
+*Verification Hash: cbdc534d0ce92a8ff81be4212c7de27fbbab6d3cdc02f4c03d110d2676748aee *
 
 Unzip the contents and run the "IMT-Resources.html" file.  
 
