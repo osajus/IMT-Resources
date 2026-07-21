@@ -7,7 +7,7 @@ This program is designed to assist an incident manager in searching for relevant
 This is designed to be downloaded and used on your local machine. 
 
 Latest release (2026-07-21-beta) can be found [here](2026-07-21-betaLINK).
-Verification Hash: d6be317ea81a35c2eef9f03f7e1fe24c38f2823356d7099878acd63c731fd3e8
+Verification Hash: 7dd2084ee33694ece9569d1027c854342c6cdd807d7a3b2bec21e7e14dedd535
 
 Unzip the contents and run the "IMT-Resources.html" file.  
 
