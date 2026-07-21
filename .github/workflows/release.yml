@@ -23,22 +23,30 @@ jobs:
             --exclude 'dist' \
             ./ dist/
 
-      - name: Zip dist
-        run: cd dist && zip -r ../release.zip .
-
       - name: Compute values
         id: vals
         run: |
-          echo "hash=$(sha256sum release.zip | awk '{print $1}')" >> "$GITHUB_OUTPUT"
           echo "version=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+
+      - name: Inject version into dist HTML
+        run: |
+          sed -i "s|PH9042|${{ steps.vals.outputs.version }}|g" dist/IMT-Resources.html
+
+      - name: Zip dist
+        run: cd dist && zip -r ../release.zip .
+
+      - name: Compute hash and link
+        id: vals2
+        run: |
+          echo "hash=$(sha256sum release.zip | awk '{print $1}')" >> "$GITHUB_OUTPUT"
           echo "link=https://github.com/${{ github.repository }}/releases/download/${GITHUB_REF_NAME}/release.zip" >> "$GITHUB_OUTPUT"
 
       - name: Generate README from template
         run: |
           sed \
-            -e "s|PH4475|${{ steps.vals.outputs.link }}|g" \
+            -e "s|PH4475|${{ steps.vals2.outputs.link }}|g" \
             -e "s|PH8989|${{ steps.vals.outputs.version }}|g" \
-            -e "s|PH2841|${{ steps.vals.outputs.hash }}|g" \
+            -e "s|PH2841|${{ steps.vals2.outputs.hash }}|g" \
             README.template.md > README.md
 
       - name: Commit updated README
