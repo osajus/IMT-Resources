@@ -31,14 +31,14 @@ jobs:
         run: |
           echo "hash=$(sha256sum release.zip | awk '{print $1}')" >> "$GITHUB_OUTPUT"
           echo "version=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
-          echo "link=https://github.com/${{ github.repository }}/releases/tag/${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          echo "link=https://github.com/${{ github.repository }}/releases/download/${GITHUB_REF_NAME}/release.zip" >> "$GITHUB_OUTPUT"
 
       - name: Generate README from template
         run: |
           sed \
-            -e "s|VERSION|${{ steps.vals.outputs.version }}|g" \
-            -e "s|VERSIONLINK|${{ steps.vals.outputs.link }}|g" \
-            -e "s|HASH|${{ steps.vals.outputs.hash }}|g" \
+            -e "s|PH4475|${{ steps.vals.outputs.link }}|g" \
+            -e "s|PH8989|${{ steps.vals.outputs.version }}|g" \
+            -e "s|PH2841|${{ steps.vals.outputs.hash }}|g" \
             README.template.md > README.md
 
       - name: Commit updated README

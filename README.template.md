@@ -6,8 +6,10 @@ This program is designed to assist an incident manager in searching for relevant
 # How do I use this?
 This is designed to be downloaded and used on your local machine. 
 
-Latest release (VERSION) can be found [here](VERSIONLINK).
-Verification Hash: HASH
+Latest release (PH8989) can be found [here](PH4475).
+
+
+*Verification Hash: PH2841 *
 
 Unzip the contents and run the "IMT-Resources.html" file.  
 
