@@ -2,11 +2,6 @@ name: Release
 
 permissions:
   contents: write
-  
-on:
-  push:
-    tags:
-      - '*'
 
 jobs:
   build-release:
@@ -14,15 +9,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build dist using releaseignore
-        run: |
-          mkdir -p dist
-          rsync -av --exclude-from='.releaseignore' \
-            --exclude 'dist' \
-            ./ dist/
+      # ... your existing build/zip steps ...
 
-      - name: Zip dist
-        run: cd dist && zip -r ../release.zip .
+      - name: Compute values
+        id: vals
+        run: |
+          echo "hash=$(sha256sum release.zip | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+          echo "version=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          echo "link=https://github.com/${{ github.repository }}/releases/tag/${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+
+      - name: Generate README from template
+        run: |
+          sed \
+            -e "s|VERSION|${{ steps.vals.outputs.version }}|g" \
+            -e "s|VERSIONLINK|${{ steps.vals.outputs.link }}|g" \
+            -e "s|HASH|${{ steps.vals.outputs.hash }}|g" \
+            README.template.md > README.md
+
+      - name: Commit updated README
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "Update README for ${{ steps.vals.outputs.version }}" || echo "No changes"
+          git push
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
