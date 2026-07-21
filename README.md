@@ -9,7 +9,7 @@ This is designed to be downloaded and used on your local machine.
 Latest release (*2026-07-21-beta*) can be found **[here](https://github.com/osajus/IMT-Resources/releases/download/2026-07-21-beta/release.zip)**.
 
 
-*Verification Hash: a075ff9947f819c6ccb048f3524122cb7858488555e0bcee9dc079323d2ab1e9*
+*Verification Hash: a3744248257b5785e4d4740982971b0bd64a7761729fc72918a9028fcae9bb2b*
 
 Unzip the contents and run the "IMT-Resources.html" file.  
 
