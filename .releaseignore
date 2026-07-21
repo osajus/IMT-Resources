@@ -4,3 +4,5 @@
 admin/
 .vscode/
 .releaseignore
+.gitignore
+.incoming/
